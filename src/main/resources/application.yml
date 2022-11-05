@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update  #validate #create
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/myoauth2
+    username: gho
+    password: munp2ki74l
+    driver-class-name: org.postgresql.Driver
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: springboot-microservice
+            client-secret: L7CYws3HULROIAsA4aSwssvZZrS9iz10
+            scope: openid, profile, read
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/springboot-microservice
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8091/realms/Demo-Realm
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8091/realms/Demo-Realm
+          jwk-set-uri: http://localhost:8091/realms/Demo-Realm/protocol/openid-connect/certs
