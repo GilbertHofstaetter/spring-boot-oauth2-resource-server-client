@@ -2,17 +2,6 @@ server:
   port: 8080
 
 spring:
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: update  #validate #create
-  datasource:
-    platform: postgres
-    url: jdbc:postgresql://localhost:5432/myoauth2
-    username: gho
-    password: munp2ki74l
-    driver-class-name: org.postgresql.Driver
   security:
     oauth2:
       client:

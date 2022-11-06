@@ -60,7 +60,7 @@ public class SecurityConfig {
         http.cors()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/api/boards")
+                .antMatchers(HttpMethod.GET, "/api/employee/list")
                 .hasAuthority("ROLE_user")
                 .anyRequest()
                 .authenticated()
