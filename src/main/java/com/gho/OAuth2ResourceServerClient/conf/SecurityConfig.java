@@ -2,7 +2,6 @@ package com.gho.OAuth2ResourceServerClient.conf;
 
 import com.nimbusds.jwt.JWT;
 import com.nimbusds.jwt.JWTParser;
-//import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -45,11 +44,6 @@ public class SecurityConfig {
         this.keycloakLogoutHandler = keycloakLogoutHandler;
     }
 
-//    @Bean
-//    public ModelMapper modelMapper() {
-//        return new ModelMapper();
-//    }
-
     @Bean
     protected SessionAuthenticationStrategy sessionAuthenticationStrategy() {
         return new RegisterSessionAuthenticationStrategy(new SessionRegistryImpl());
@@ -67,7 +61,6 @@ public class SecurityConfig {
                 .and()
                 .oauth2ResourceServer()
                 .jwt()
-                //.jwtAuthenticationConverter(jwtAuthenticationConverter());
                 .jwtAuthenticationConverter(customJwtAuthenticationConverter());
         http.logout()
                 .addLogoutHandler(keycloakLogoutHandler)
@@ -111,19 +104,15 @@ public class SecurityConfig {
                     } catch (Exception e) {
 
                     }
-
                     // mappedAuthorities.add(new SimpleGrantedAuthority("ROLE_user"));
                     // Map the claims found in idToken and/or userInfo
                     // to one or more GrantedAuthority's and add it to mappedAuthorities
 
                 } else if (authority instanceof OAuth2UserAuthority) {
                     OAuth2UserAuthority oauth2UserAuthority = (OAuth2UserAuthority) authority;
-
                     Map<String, Object> userAttributes = oauth2UserAuthority.getAttributes();
-
                     // Map the attributes found in userAttributes
                     // to one or more GrantedAuthority's and add it to mappedAuthorities
-
                 }
                 mappedAuthorities.add(authority);
             });
