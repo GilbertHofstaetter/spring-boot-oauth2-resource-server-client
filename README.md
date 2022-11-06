@@ -10,7 +10,7 @@ Thanks to:
 
 1. Download the latest keycloak server from https://www.keycloak.org/downloads. In my case version 20.0.0. The admin console gui has changed a bit.
 2. Unzip and open a terminal and start keycloak with **bin/kc.sh start-dev --http-port 8091** 
-3. Follow the tutorial from https://www.djamware.com/post/6225b66ba88c55c95abca0b6/spring-boot-security-postgresql-and-keycloak-rest-api-oauth2
+3. Follow the tutorial from https://www.djamware.com/post/6225b66ba88c55c95abca0b6/spring-boot-security-postgresql-and-keycloak-rest-api-oauth2 to setup the keycloak server
 4. Create a Realm named **Demo-Realm** and a client named **springboot-microservice**
 5. Create 3 users named employee1 - employee3 and 2 realm roles named **app-user** and **app-admin**
 6. Create 2 user roles named **user** and **admin** within client **springboot-microservice**. Don't forget to set a password.
