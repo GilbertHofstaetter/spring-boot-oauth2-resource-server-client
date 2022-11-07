@@ -100,7 +100,6 @@ public class SecurityConfig {
 
                     try {
                         JWT jwt = JWTParser.parse(idToken.getTokenValue());
-                        System.out.println(jwt);
                     } catch (Exception e) {
 
                     }
