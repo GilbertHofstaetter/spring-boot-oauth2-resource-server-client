@@ -45,9 +45,10 @@ public class OpenApiConfig {
         scopes.addString("read", "read");
         flow.setScopes(scopes);
 
-        //flows = flows.implicit(flow);
-        //flows = flows.authorizationCode(flow);
-        flows.password(flow);
+        //flows = flows.implicit(flow); //-> has to be activated in keycloak client springboot-microservice
+        //flows = flows.authorizationCode(flow); //->
+        flows = flows.password(flow); //-> token for entered user
+        //flows = flows.clientCredentials(flow); //-> token for serviceaccount user "service-account-springboot-microservice"
 
 
         return new OpenAPI()
