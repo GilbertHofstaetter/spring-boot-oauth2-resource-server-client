@@ -9,6 +9,10 @@ Demo project for keycloak integration as an authorisation server in a spring boo
 * http://localhost:8080/userOAuth2
 * http://localhost:8080/logout
 
+**Swagger-Ui**
+
+* http://localhost:8080/swagger-ui.html
+
 On February 2022 Keycloak announced the deprecation of its adapters, among other things the spring adapter https://www.keycloak.org/2022/02/adapter-deprecation.
 In my demo project I show how to integrate keycloak as an authorisation server in a spring boot project that serves as a client and a resource server based on spring security OAuth2.
 
