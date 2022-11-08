@@ -3,7 +3,7 @@ Demo project for keycloak integration as an authorisation server in a spring boo
 
 **Build project**
 
-* mvn clean install -P production
+* mvn clean install
 
 
 **Endpoints**
