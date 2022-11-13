@@ -14,16 +14,16 @@ spring:
             redirect-uri: http://localhost:8080/login/oauth2/code/springboot-microservice
         provider:
           keycloak:
-            issuer-uri: http://localhost:8091/realms/Demo-Realm
+            issuer-uri: http://@keycloak.host@:8091/realms/Demo-Realm
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8091/realms/Demo-Realm
-          jwk-set-uri: http://localhost:8091/realms/Demo-Realm/protocol/openid-connect/certs
+          issuer-uri: http://@keycloak.host@:8091/realms/Demo-Realm
+          jwk-set-uri: http://@keycloak.host@:8091/realms/Demo-Realm/protocol/openid-connect/certs
 springdoc:
   api-docs:
     path: /api/api-docs
   swagger-ui:
     path: /swagger-ui.html
   oAuthFlow:
-    authorizationUrl: http://localhost:8091/realms/Demo-Realm/protocol/openid-connect/auth
-    tokenUrl: http://localhost:8091/realms/Demo-Realm/protocol/openid-connect/token
+    authorizationUrl: http://@keycloak.host@:8091/realms/Demo-Realm/protocol/openid-connect/auth
+    tokenUrl: http://@keycloak.host@:8091/realms/Demo-Realm/protocol/openid-connect/token

@@ -4,6 +4,7 @@ import com.gho.OAuth2ResourceServerClient.repository.CompanyRepository;
 import com.gho.OAuth2ResourceServerClient.obj.Company;
 import com.gho.OAuth2ResourceServerClient.obj.Employee;
 import com.gho.OAuth2ResourceServerClient.repository.EmployeeRepository;
+import com.gho.OAuth2ResourceServerClient.service.KeycloakService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,13 +24,10 @@ public class OAuth2ResourceServerClientApplication {
 		SpringApplication.run(OAuth2ResourceServerClientApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
+
 
 	@Bean
-	public CommandLineRunner loadData(EmployeeRepository employeeRepository, CompanyRepository companyRepository) {
+	public CommandLineRunner loadData(EmployeeRepository employeeRepository, CompanyRepository companyRepository, KeycloakService keycloakService) {
 		return (args) -> {
 			Employee employee0 = new Employee();
 			employee0.setFirstName("Max0");
@@ -69,6 +67,8 @@ public class OAuth2ResourceServerClientApplication {
 
 			employee2.setCompany(company);
 			employeeRepository.save(employee2);
+
+			//keycloakService.createClient();
 
 		};
 	}

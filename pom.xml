@@ -18,6 +18,26 @@
     <description>Demo project for keycloak integration as an authorisation server in spring boot resource server and client with rbac and scopes authorisation based on spring security</description>
 <!--    <packaging>pom</packaging>-->
 
+    <profiles>
+        <profile>
+            <id>docker-keycloak</id>
+            <properties>
+                <keycloak.host>keycloak</keycloak.host>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <keycloak.host>localhost</keycloak.host>
+            </properties>
+        </profile>
+    </profiles>
+
+
+
     <properties>
         <java.version>11</java.version>
         <springdoc-openapi.version>1.6.11</springdoc-openapi.version>
@@ -58,6 +78,12 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>${springdoc-openapi.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-admin-client</artifactId>
+            <version>20.0.0</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -79,6 +105,13 @@
                     </excludes>
                 </configuration>
             </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-resources-plugin</artifactId>-->
+<!--                <version>3.0.2</version>-->
+<!--                <configuration>-->
+
+<!--                </configuration>-->
+<!--            </plugin>-->
         </plugins>
     </build>
 
