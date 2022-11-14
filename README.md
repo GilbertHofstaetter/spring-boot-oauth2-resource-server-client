@@ -25,6 +25,6 @@ Thanks to:
 * https://www.djamware.com/post/6225b66ba88c55c95abca0b6/spring-boot-security-postgresql-and-keycloak-rest-api-oauth2
 * https://stackoverflow.com/questions/72719400/how-to-configure-oauth2-in-spring-boot-be-spring-boot-fe-keycloak
 
-**See Turorial.pdf for further infos.**
+**See Turorial.pdf for further infos.** \
 **See Turorial Docker setup.pdf for further infos about running the project with Docker**
 
