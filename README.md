@@ -26,5 +26,5 @@ Thanks to:
 * https://stackoverflow.com/questions/72719400/how-to-configure-oauth2-in-spring-boot-be-spring-boot-fe-keycloak
 
 **See Turorial.pdf for further infos.** \
-**See Turorial Docker setup.pdf for further infos about running the project with Docker**
+**See Turorial Docker setup.pdf for further infos about running the project with Docker.**
 
