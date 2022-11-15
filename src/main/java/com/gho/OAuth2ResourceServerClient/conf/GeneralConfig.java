@@ -7,10 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-
 @Configuration
-public class CommonConfiguration {
+public class GeneralConfig {
 
     @Bean
     public RestTemplate restTemplate() {
